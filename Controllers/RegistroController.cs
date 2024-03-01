@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 public class RegistroController : ControllerBase
 {
     [HttpPost]
+    [Route("registro")]
 
     public IActionResult RegistroUsuario([FromBody] Usuario user)
     {
@@ -17,7 +18,14 @@ public class RegistroController : ControllerBase
             Password= user.Password
         };
 
-        return usuario != null ? Ok() : BadRequest();
-        
+        if (user != null)
+        {
+            GuardarJson.GuardarUsuario(usuario);
+            return Ok();
+        }
+        else
+        {
+            return BadRequest();
+        }
     }
 }

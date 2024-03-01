@@ -1,12 +1,17 @@
 [
-    {
-        "Nombre" : "Rafael",
-        "Email" : "rafax@gmail",
-        "PassWord" : "1234"
-    },
-    {
-        "Nombre" : "Joshue",
-        "Email" : "Joshue@gmail",
-        "PassWord" : "1234"
-    }
+  {
+    "Name": "Rafael",
+    "Email": "rafax@gmail",
+    "Password": "1234"
+  },
+  {
+    "Name": "Joshue",
+    "Email": "Joshue@gmail",
+    "Password": "1234"
+  },
+  {
+    "Name": "sa",
+    "Email": "sa",
+    "Password": "1234"
+  }
 ]

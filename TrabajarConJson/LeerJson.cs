@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 public class LeerJson
 {
-    const string rutaUsarios="Persistencia/Usuarios.json";
+    public const string rutaUsarios="Persistencia/Usuarios.json";
 
     public static List<Usuario>? LeerUsuarios()
     {

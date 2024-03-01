@@ -2,7 +2,7 @@ const btnRegistro=document.getElementById('btnRegistro');
 
 btnRegistro.addEventListener('click',(e)=>{
     e.preventDefault();
-    const urlRegistro='https://localhost:7042/Registro';
+    const urlRegistro='https://localhost:7042/Registro/registro';
 
     const name=document.getElementById('name').value;
     const email=document.getElementById('email').value;
