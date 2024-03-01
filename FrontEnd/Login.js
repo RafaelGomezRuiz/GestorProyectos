@@ -29,11 +29,10 @@ btnLogin.addEventListener('click',(e)=>{
         {
             throw new Error("Credenciales invalidas");
         }
-        //window.location.href="Inicio.html";
-        return response.json();
+        window.location.href="Inicio.html";
     })
     .catch(error=>{
-        console.log("object");   
+        // console.log("object");   
         alert(error);
     })
 
