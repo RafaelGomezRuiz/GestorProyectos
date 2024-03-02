@@ -4,20 +4,19 @@ const liCrearTarea=document.getElementById('crear-tareas');
 const divContenedor=document.getElementById('contenedor-inicio')
 const btnCrearTarea= document.getElementById('btn-CrearTarea')
 
-    // let formularios = document.getElementById('form-crear-tarea');
-    
-    //     formularios.style.display = 'none';
+const formularioCrearTarea = document.getElementById('form-crear-tarea');
+formularioCrearTarea.style.display = 'none';
     
 
 function CrearTarea()
 {
     
-    if(divContenedor.style.display ==='none')
+    if(formularioCrearTarea.style.display ==='none')
     {
-        divContenedor.style.display ='block' 
+        formularioCrearTarea.style.display ='block' 
     }
     else{
-        divContenedor.style.display ='none'
+        formularioCrearTarea.style.display ='none'
     }
     
 }
@@ -32,14 +31,12 @@ btnCrearTarea.addEventListener('click',(e)=>{
     const idProyecto=document.getElementById('id-proyecto').value;
     const descripcion=document.getElementById('descripcion').value;
     const fechaVencimiento=document.getElementById('fecha-vencimiento').value;
-    const correoColaborador=document.getElementById('correo-colaborador').value;
     const urlCrearTarjeta='https://localhost:7042/CrearTarea/crearTarea';
     
     const datos={
         IdProyecto: idProyecto,
         Descripcion : descripcion,
         FechaVencimiento: fechaVencimiento,
-        Email : correoColaborador
     }
     const options={
         method:"POST",
@@ -53,7 +50,7 @@ btnCrearTarea.addEventListener('click',(e)=>{
         if (!response.ok) {
             throw new Error();
         }
-        alert("TareaCreada");
+        alert("Tarea Creada");
     })
     .catch((error)=>{
         alert(error);

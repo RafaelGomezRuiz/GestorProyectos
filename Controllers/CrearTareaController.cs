@@ -10,9 +10,7 @@ public class CrearTareaController : ControllerBase
     public IActionResult CrearTarea([FromBody] ParametrosCrearTarea tarea)
     {
         Proyecto? proyecto = BuscarJson.BuscarProyecto(tarea.IdProyecto);
-        Usuario? colaboradorAsignado=BuscarJson.BuscarUsuario(tarea.Email);
-
-        if (proyecto==null || colaboradorAsignado == null)
+        if (proyecto==null )
         {
             return BadRequest();
         }
@@ -23,7 +21,7 @@ public class CrearTareaController : ControllerBase
                 Descripcion=tarea.Descripcion,
                 FechaVencimiento=tarea.FechaVencimiento,
             };
-            tareaCreada.ColaboradorAsignado.Add(colaboradorAsignado);
+            // tareaCreada.ColaboradorAsignado.Add(colaboradorAsignado);
             GuardarJson.GuardarTarea(tareaCreada);
             return Ok();
         }

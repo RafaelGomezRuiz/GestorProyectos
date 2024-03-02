@@ -1,3 +1,19 @@
 [
-    
+  {
+    "Id": 4,
+    "IdProyecto": 1,
+    "Descripcion": "carne carne carneee",
+    "Estado": false,
+    "FechaCreacion": "2024-03-01T23:27:17.4569844-04:00",
+    "FechaVencimiento": "2024-03-02T23:27:00",
+    "ColaboradorAsignado": [
+      {
+        "Name": "Rafael",
+        "Email": "rafax@gmail",
+        "Password": "1234",
+        "Proyecto": [],
+        "Tarea": []
+      }
+    ]
+  }
 ]
