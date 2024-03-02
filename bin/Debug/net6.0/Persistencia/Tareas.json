@@ -15,5 +15,14 @@
         "Tarea": []
       }
     ]
+  },
+  {
+    "Id": 4,
+    "IdProyecto": 2,
+    "Descripcion": "prueba 2",
+    "Estado": false,
+    "FechaCreacion": "2024-03-02T18:07:31.1982602-04:00",
+    "FechaVencimiento": "2024-03-01T18:07:00",
+    "ColaboradorAsignado": []
   }
 ]

@@ -2,27 +2,44 @@ public class BuscarJson
 {
     public static Usuario? BuscarUsuario (string email)
     {
-        Usuario? usuario=GuardarJson.usuariosActuales.FirstOrDefault(a=>a.Email==email);
+        Usuario? usuario=ProductosActuales.usuariosActuales.FirstOrDefault(a=>a.Email==email);
         return usuario;
     }
     public static Proyecto? BuscarProyecto (int id)
     {
-        Proyecto? Proyecto=GuardarJson.proyectosActuales.FirstOrDefault(a=>a.Id==id);
+        Proyecto? Proyecto=ProductosActuales.proyectosActuales.FirstOrDefault(a=>a.Id==id);
         return Proyecto;
     }
+    public static Tarea? BuscarTarea (int id)
+    {
+        Tarea? tarea=ProductosActuales.tareasActuales.FirstOrDefault(a=>a.Id==id);
+        return tarea;
+    }
 
-        public static int UltimoNum(string tipo)
+    public static bool ColaboradorYaEstaAsignado(Tarea tarea, Usuario colaborador)
+    {
+        if (tarea.ColaboradorAsignado.Any(c=>c==colaborador))
         {
-            if (tipo=="Tarea")
-            {
-            int MaxNum = GuardarJson.proyectosActuales.Max(c => c.Id);
-            return MaxNum+1;
-            }
-            else
-            {
-                return 1;
-            }
+            return true;
         }
+        else
+        {
+            return false;
+        }
+    }
+
+    public static int UltimoNum(string tipo)
+    {
+        if (tipo=="Tarea")
+        {
+            int MaxNum = ProductosActuales.tareasActuales.Max(c => c.Id);
+            return MaxNum+1;
+        }
+        else
+        {
+            return 1;
+        }
+    }
             // else if(tipo=="Proyecto")
             // {
             //     int MaxNum = GuardarJson.productosActuales.Tarjetas.Max(c => c.NumeroTarjeta);
