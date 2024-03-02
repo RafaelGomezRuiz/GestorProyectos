@@ -28,3 +28,4 @@ C:\Users\gsant\Programacionll\ProjectManager\obj\Debug\net6.0\ProjectManager.pdb
 C:\Users\gsant\Programacionll\ProjectManager\obj\Debug\net6.0\ProjectManager.genruntimeconfig.cache
 C:\Users\gsant\Programacionll\ProjectManager\obj\Debug\net6.0\ref\ProjectManager.dll
 C:\Users\gsant\Programacionll\ProjectManager\bin\Debug\net6.0\Persistencia\Projectos.json
+C:\Users\gsant\Programacionll\ProjectManager\bin\Debug\net6.0\Persistencia\Tareas.json

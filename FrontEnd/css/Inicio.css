@@ -11,6 +11,17 @@ header{
     justify-content: center;
     align-items: center;
 }
+ul{
+    display: flex;
+    flex-direction: row;
+}
 nav li{
+    margin-right: 10px;
     list-style: none;
+    border: 1px solid;
+    padding: 10px;
+}
+
+input{
+    margin-bottom: 10px;
 }

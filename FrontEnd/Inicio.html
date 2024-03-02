@@ -8,16 +8,39 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="menu-inicio">
         <ul>
-            <li>Listar Poyectos</li>
-            <li>Crear Tareas</li>
+            <li id="listar-proyectos">Listar Poyectos</li>
+            <li id="crear-tareas">Crear Tareas</li>
             <li>Listar Tareas</li>
             <li>Asignar colaboradores a tareas</li>
         </ul>
         </nav>
     </header>
+    <div id="contenedor-inicio">
+        <form id="form-crear-tarea">
+            <div>
+                <label for="id-proyecto">Id del proyecto:</label>
+                <input type="text" id="id-proyecto" placeholder="Id del proyecto">
+            </div>
+            <div>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" placeholder="Descripción de la tarea">
+            </div>
+            <div>
+                <label for="fecha-vencimiento">Fecha de vencimiento:</label>
+                <input type="datetime-local" id="fecha-vencimiento">
+            </div>
+            <div>
+                <label for="correo-colaborador">Correo del Colaborador:</label>
+                <input type="text" id="correo-colaborador" placeholder="Correo del Colaborador">
+            </div>
+            <button type="submit" id="btn-CrearTarea">Crear</button>
+        </form>
+    </div>
+    
     
         <h1>INICIO</h1>
+        <script src="Crear.js"></script>
 </body>
 </html>

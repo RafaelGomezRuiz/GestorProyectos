@@ -1,0 +1,46 @@
+[
+    {
+      "Id": 1,
+      "Nombre": "Proyecto 1",
+      "Descripcion": "Descripción del Proyecto 1",
+      "Estado": true,
+      "FechaCreacion": "2024-02-27T10:00:00",
+      "FechaVencimiento": "2024-03-15T00:00:00",
+      "ColaboradorAsignado": [
+        {
+          "Id": 1,
+          "Nombre": "Usuario 1",
+          "Correo": "usuario1@example.com"
+        },
+        {
+          "Id": 2,
+          "Nombre": "Usuario 2",
+          "Correo": "usuario2@example.com"
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Nombre": "Proyecto 2",
+      "Descripcion": "Descripción del Proyecto 2",
+      "Estado": true,
+      "FechaCreacion": "2024-02-27T10:30:00",
+      "FechaVencimiento": "2024-03-20T00:00:00",
+      "ColaboradorAsignado": [
+        {
+          "Id": 3,
+          "Nombre": "Usuario 3",
+          "Correo": "usuario3@example.com"
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Nombre": "Proyecto 3",
+      "Descripcion": "Descripción del Proyecto 3",
+      "Estado": true,
+      "FechaCreacion": "2024-02-27T11:00:00",
+      "FechaVencimiento": "2024-03-25T00:00:00",
+      "ColaboradorAsignado": []
+    }
+  ]

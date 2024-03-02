@@ -1,7 +1,7 @@
 public class Tarea
 {
     public int Id {get; set;}
-    public string? IdProyecto { get; set; }
+    public int IdProyecto { get; set; }
     public string?  Descripcion { get; set; }
     public bool Estado { get; set; }
     public DateTime FechaCreacion{get;set;}
@@ -10,6 +10,7 @@ public class Tarea
 
     public Tarea()
     {
+        Id=BuscarJson.UltimoNum("Tarea");
         Estado=false;
         FechaCreacion= DateTime.Now;
         ColaboradorAsignado = new List<Usuario>();
