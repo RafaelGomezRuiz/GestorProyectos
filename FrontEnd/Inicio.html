@@ -19,7 +19,7 @@
     </header>
     <div id="contenedor-inicio">
         <!-- Formulario crear tareas -->
-        <form id="form-crear-tarea">
+        <form id="form-crear-tarea" style="display: none;">
             <div>
                 <label for="id-proyecto">Id del proyecto:</label>
                 <input type="text" id="id-proyecto" placeholder="Id del proyecto">
@@ -34,7 +34,7 @@
             </div>
             <button type="submit" id="btn-CrearTarea"> Crear </button>
         </form>
-        <table id="table-listar-tareas">
+        <table id="table-listar-tareas" style="display: none;">
             <thead>
                 <th>Id</th>
                 <th>Id de proyecto</th>
@@ -46,16 +46,16 @@
             </thead>
             <tbody id="body-listar-tareas"></tbody>
         </table>
-        <form id="form-agregar-colaborador">
+        <form id="form-agregar-colaborador" style="display: none;">
             <div>
-                <label>Email del colaborador</label>
+                <label>Id de la tarea</label>
                 <input type="text" id="id-tarea">
             </div>
             <div>
                 <label>Email del colaborador</label>
                 <input type="text" id="email-colaborador">
             </div>
-            <button type="submit"> Agregar </button>
+            <button type="submit" id="btn-agregar-colaborador"> Agregar </button>
         </form>
     </div>
     

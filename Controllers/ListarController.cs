@@ -17,7 +17,7 @@ public class ListarController : ControllerBase
 
     public List<Proyecto>? listaProyectos()
     {
-        List<Proyecto> listaProyectos= ProductosActuales.proyectosActuales;
+        List<Proyecto>? listaProyectos= ProductosActuales.proyectosActuales;
          return listaProyectos;
     }
 }

@@ -33,5 +33,14 @@
     "FechaCreacion": "2024-03-02T23:37:52.3595687-04:00",
     "FechaVencimiento": "2024-03-03T23:37:00",
     "ColaboradorAsignado": []
+  },
+  {
+    "Id": 4,
+    "IdProyecto": 1,
+    "Descripcion": "carne carne carneee",
+    "Estado": false,
+    "FechaCreacion": "2024-03-03T17:22:29.8418418-04:00",
+    "FechaVencimiento": "2024-03-04T17:22:00",
+    "ColaboradorAsignado": []
   }
 ]

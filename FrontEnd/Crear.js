@@ -5,8 +5,6 @@ const divContenedor=document.getElementById('contenedor-inicio')
 const btnCrearTarea= document.getElementById('btn-CrearTarea')
 
 const formularioCrearTarea = document.getElementById('form-crear-tarea');
-formularioCrearTarea.style.display = 'none';
-    
 
 function DisplayStatus(tipoContenedor)
 {
@@ -31,12 +29,12 @@ btnCrearTarea.addEventListener('click',(e)=>{
     e.preventDefault();
     e.stopPropagation();
     DisplayStatus(formularioCrearTarea);
-    divContenedor.innerHTML='';
-    const idProyecto=document.getElementById('id-proyecto').value;
-    const descripcion=document.getElementById('descripcion').value;
-    const fechaVencimiento=document.getElementById('fecha-vencimiento').value;
-    const urlCrearTarjeta='https://localhost:7042/CrearTarea/crearTarea';
-    
+ 
+        const idProyecto=document.getElementById('id-proyecto').value;
+        const descripcion=document.getElementById('descripcion').value;
+        const fechaVencimiento=document.getElementById('fecha-vencimiento').value;
+        const urlCrearTarjeta='https://localhost:7042/CrearTarea/crearTarea';
+        
     const datos={
         IdProyecto: idProyecto,
         Descripcion : descripcion,
@@ -57,6 +55,7 @@ btnCrearTarea.addEventListener('click',(e)=>{
         alert("Tarea Creada");
     })
     .catch((error)=>{
+    
         alert(error);
     })
 })
