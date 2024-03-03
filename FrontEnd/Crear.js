@@ -50,12 +50,9 @@ btnCrearTarea.addEventListener('click',(e)=>{
     fetch(urlCrearTarjeta,options)
     .then((response)=>{
         if (!response.ok) {
-            throw new Error();
+            throw new Error("Haz ingresado valores invalidos");
         }
         alert("Tarea Creada");
     })
-    .catch((error)=>{
-    
-        alert(error);
-    })
+    .catch((error)=>alert(error))
 })

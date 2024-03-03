@@ -12,10 +12,9 @@ liAgregarColaborador.addEventListener('click',(e)=>
 
 btnColaborador.addEventListener('click',(e)=>{
     e.preventDefault();
+    DisplayStatus(formAgregarColaborador);
     const idTarea=document.getElementById('id-tarea').value;
     const emailColaborador=document.getElementById('email-colaborador').value;
-    console.log(typeof(idTarea))
-    console.log(idTarea,emailColaborador);
     const urlAgregarColaborador='https://localhost:7042/AgregarColaboradores/agregarColaborador';
     
     const datos={
@@ -35,10 +34,10 @@ btnColaborador.addEventListener('click',(e)=>{
     .then(Response =>{
         if(!Response.ok)
         {
-            throw new Error("Ha ocurrido un error");
+            throw new Error("Valores invalidos en los campos");
         }
         alert('colaborador agregado')
     })
-    .catch((error)=>console.log(error))
+    .catch((error)=>alert(error))
     
 })

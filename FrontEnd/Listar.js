@@ -20,11 +20,11 @@ liListarTareas.addEventListener('click',(e)=>{
     const MostrarTablaTareas=(data)=>
     {
         
-        let body=innerHTML='';
+        let body='';
         for (let i = 0; i < data.length; i++) {
             let colaboradorAsignado='';
             for (let j = 0; j < data[i].colaboradorAsignado.length; j++) {
-                colaboradorAsignado += data[i].colaboradorAsignado[j].email;
+                colaboradorAsignado += data[i].colaboradorAsignado[j].email+', ';
             }
             if (data[i].colaboradorAsignado.length<1)
             {
@@ -37,4 +37,42 @@ liListarTareas.addEventListener('click',(e)=>{
         document.getElementById('body-listar-tareas').innerHTML=body;
     }
 })
+
+//Listar Proyectos
+const liListarProyectos=document.getElementById('listar-proyectos');
+const tablaProyectos=document.getElementById('table-listar-proyectos');
+const urlListaProyectos='https://localhost:7042/Listar';
+
+liListarProyectos.addEventListener('click',(e)=>{
+    DisplayStatus(tablaProyectos);
+
+    fetch(`${urlListaProyectos}/getListaProyectos`)
+    .then((response)=>response.json())
+    .then(datos=>{
+        MostrarTablaProyectos(datos);
+    })
+    .catch((error)=>alert(error))
+
+    let template='';
+    function MostrarTablaProyectos(datos)
+    {
+        let colaboradores='';
+        for (let i = 0; i < datos.length; i++) {
+            for (let j = 0; j < datos[i].colaboradorAsignado.length; j++) {
+                
+                colaboradores+=datos[i].colaboradorAsignado[j].email+", ";
+            }
+            if (datos[i].colaboradorAsignado.length<1)
+            {
+                colaboradores= '0';
+            }
+            template+=`<tr><td>${datos[i].id}</><td>${datos[i].nombre}</td><td>${datos[i].descripcion}</td>
+            <td>${datos[i].estado}</td><td>${datos[i].fechaCreacion}</td><td>${datos[i].fechaVencimiento}</td>
+            <td>${colaboradores}</td></tr>` ;  
+        }
+        document.getElementById('body-listar-proyectos').innerHTML=template;
+    }
+})
+
+
 

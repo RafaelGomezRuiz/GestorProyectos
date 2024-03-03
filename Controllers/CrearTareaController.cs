@@ -12,7 +12,7 @@ public class CrearTareaController : ControllerBase
         Proyecto? proyecto = BuscarJson.BuscarProyecto(tarea.IdProyecto);
         if (proyecto==null )
         {
-            return BadRequest();
+            return BadRequest(new { error = "No existe un proyecto con ese id", idProyecto = tarea.IdProyecto });
         }
         else
         {
