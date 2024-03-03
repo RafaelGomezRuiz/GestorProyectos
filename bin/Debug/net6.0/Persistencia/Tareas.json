@@ -36,11 +36,11 @@
   },
   {
     "Id": 4,
-    "IdProyecto": 1,
-    "Descripcion": "carne carne carneee",
+    "IdProyecto": 3,
+    "Descripcion": "tarea nueva",
     "Estado": false,
-    "FechaCreacion": "2024-03-03T17:22:29.8418418-04:00",
-    "FechaVencimiento": "2024-03-04T17:22:00",
+    "FechaCreacion": "2024-03-03T17:27:42.6412682-04:00",
+    "FechaVencimiento": "2024-03-15T17:27:00",
     "ColaboradorAsignado": []
   }
 ]

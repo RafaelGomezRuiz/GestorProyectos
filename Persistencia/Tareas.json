@@ -33,5 +33,46 @@
     "FechaCreacion": "2024-03-02T23:37:52.3595687-04:00",
     "FechaVencimiento": "2024-03-03T23:37:00",
     "ColaboradorAsignado": []
+  },
+  {
+    "Id": 4,
+    "IdProyecto": 3,
+    "Descripcion": "tarea nueva",
+    "Estado": false,
+    "FechaCreacion": "2024-03-03T17:27:42.6412682-04:00",
+    "FechaVencimiento": "2024-03-15T17:27:00",
+    "ColaboradorAsignado": [
+      {
+        "Name": "Rafael",
+        "Email": "rafax@gmail",
+        "Password": "1234",
+        "Proyecto": [],
+        "Tarea": []
+      },
+      {
+        "Name": "Joshue",
+        "Email": "Joshue@gmail",
+        "Password": "1234",
+        "Proyecto": [],
+        "Tarea": []
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "IdProyecto": 2,
+    "Descripcion": "tareaa",
+    "Estado": false,
+    "FechaCreacion": "2024-03-03T17:30:10.3280247-04:00",
+    "FechaVencimiento": "2024-03-09T17:30:00",
+    "ColaboradorAsignado": [
+      {
+        "Name": "Rafael",
+        "Email": "rafax@gmail",
+        "Password": "1234",
+        "Proyecto": [],
+        "Tarea": []
+      }
+    ]
   }
 ]
