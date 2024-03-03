@@ -21,7 +21,6 @@ public class CrearTareaController : ControllerBase
                 Descripcion=tarea.Descripcion,
                 FechaVencimiento=tarea.FechaVencimiento,
             };
-            // tareaCreada.ColaboradorAsignado.Add(colaboradorAsignado);
             GuardarJson.GuardarTarea(tareaCreada);
             return Ok();
         }

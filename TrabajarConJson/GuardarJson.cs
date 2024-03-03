@@ -11,9 +11,16 @@ public class GuardarJson
     public static void GuardarTarea(Tarea tarea)
     {
         ProductosActuales.tareasActuales.Add(tarea);
+        SerializarListaTareas();
+    }
+    
+    public static void SerializarListaTareas()
+    {
         string ? listaTareas=JsonConvert.SerializeObject(ProductosActuales.tareasActuales, Formatting.Indented);
         File.WriteAllText(RutaProductos.rutaTareas, listaTareas);
     }
+
+    
 
     
     
