@@ -14,11 +14,10 @@ public class LeerJson
         List<Proyecto>? listaProyectos=JsonConvert.DeserializeObject<List<Proyecto>>(proyectos);
         return listaProyectos;
     }
-
-    public static List<Tarea> LeerTareas()
+    public static List<Tarea>? LeerTareas()
     {
         string? tareas=File.ReadAllText(RutaProductos.rutaTareas);
-        List<Tarea> listaTareas=JsonConvert.DeserializeObject<List<Tarea>>(tareas);
+        List<Tarea>? listaTareas=JsonConvert.DeserializeObject<List<Tarea>>(tareas);
         return listaTareas;
     }
 

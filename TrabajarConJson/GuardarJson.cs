@@ -5,8 +5,8 @@ public class GuardarJson
     public static void GuardarUsuario(Usuario usuario)
     {
         ProductosActuales.usuariosActuales.Add(usuario);
-        string ? listaUsuario=JsonConvert.SerializeObject(ProductosActuales.usuariosActuales, Formatting.Indented);
-        File.WriteAllText(RutaProductos.rutaUsarios, listaUsuario);
+        SerializarListaUsuarios();
+    
     }
     public static void GuardarTarea(Tarea tarea)
     {
@@ -19,6 +19,13 @@ public class GuardarJson
         string ? listaTareas=JsonConvert.SerializeObject(ProductosActuales.tareasActuales, Formatting.Indented);
         File.WriteAllText(RutaProductos.rutaTareas, listaTareas);
     }
+    
+    public static void SerializarListaUsuarios()
+    {
+        string ? listaUsuario=JsonConvert.SerializeObject(ProductosActuales.usuariosActuales, Formatting.Indented);
+        File.WriteAllText(RutaProductos.rutaUsarios, listaUsuario);
+    }
+
 
     
 

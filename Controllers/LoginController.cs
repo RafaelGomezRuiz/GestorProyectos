@@ -13,7 +13,7 @@ public class LoginController : ControllerBase
         Usuario? usuario=BuscarJson.BuscarUsuario(login.Email);
         if (usuario == null)
         {
-            return BadRequest();
+            return BadRequest("No existe usuario con ese email");
         }
         else
         {
@@ -23,7 +23,7 @@ public class LoginController : ControllerBase
             }
             else
             {
-                return BadRequest();
+                return BadRequest("Contrasena incorrecta");
             }
         }
     }

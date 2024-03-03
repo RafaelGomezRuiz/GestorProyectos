@@ -8,19 +8,21 @@ const formularioCrearTarea = document.getElementById('form-crear-tarea');
 formularioCrearTarea.style.display = 'none';
     
 
-function CrearTarea()
+function DisplayStatus(tipoContenedor)
 {
     
-    if(formularioCrearTarea.style.display ==='none')
+    if(tipoContenedor.style.display ==='none')
     {
-        formularioCrearTarea.style.display ='block' 
+        tipoContenedor.style.display ='block' 
     }
     else{
-        formularioCrearTarea.style.display ='none'
+        tipoContenedor.style.display ='none'
     }
     
 }
-liCrearTarea.addEventListener('click',CrearTarea);
+liCrearTarea.addEventListener('click',(e)=>{
+    DisplayStatus(formularioCrearTarea);
+});
 
 //Funcion para crear Tareas
 
@@ -28,6 +30,8 @@ liCrearTarea.addEventListener('click',CrearTarea);
 btnCrearTarea.addEventListener('click',(e)=>{
     e.preventDefault();
     e.stopPropagation();
+    DisplayStatus(formularioCrearTarea);
+    divContenedor.innerHTML='';
     const idProyecto=document.getElementById('id-proyecto').value;
     const descripcion=document.getElementById('descripcion').value;
     const fechaVencimiento=document.getElementById('fecha-vencimiento').value;

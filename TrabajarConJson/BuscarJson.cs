@@ -32,8 +32,15 @@ public class BuscarJson
     {
         if (tipo=="Tarea")
         {
+            if (ProductosActuales.tareasActuales != null)
+            {
             int MaxNum = ProductosActuales.tareasActuales.Max(c => c.Id);
             return MaxNum+1;
+            }
+            else
+            {
+                return 1;
+            }
         }
         else
         {

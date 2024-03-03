@@ -30,9 +30,10 @@ public class AgregarColaboradoresController : ControllerBase
             {
                 tarea.ColaboradorAsignado.Add(colaboradorAsignado);
                 GuardarJson.SerializarListaTareas();
-                //GuardarJson.GuardarTarea(tarea);
+
                 // colaboradorAsignado.Tarea.Add(tarea);
-                // GuardarJson.GuardarUsuario(colaboradorAsignado);
+                // GuardarJson.SerializarListaUsuarios();
+                
                 return Ok();
             }
         }

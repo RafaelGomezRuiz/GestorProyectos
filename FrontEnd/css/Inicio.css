@@ -26,3 +26,9 @@ nav li{
 input{
     margin-bottom: 10px;
 }
+
+ td{
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+  }

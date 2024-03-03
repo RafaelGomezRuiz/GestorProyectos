@@ -1,6 +1,6 @@
 [
   {
-    "Id": 4,
+    "Id": 1,
     "IdProyecto": 1,
     "Descripcion": "carne carne carneee",
     "Estado": false,
@@ -17,12 +17,21 @@
     ]
   },
   {
-    "Id": 4,
+    "Id": 2,
     "IdProyecto": 2,
     "Descripcion": "prueba 2",
     "Estado": false,
     "FechaCreacion": "2024-03-02T18:07:31.1982602-04:00",
     "FechaVencimiento": "2024-03-01T18:07:00",
+    "ColaboradorAsignado": []
+  },
+  {
+    "Id": 3,
+    "IdProyecto": 1,
+    "Descripcion": "otro",
+    "Estado": false,
+    "FechaCreacion": "2024-03-02T23:37:52.3595687-04:00",
+    "FechaVencimiento": "2024-03-03T23:37:00",
     "ColaboradorAsignado": []
   }
 ]
