@@ -1,4 +1,4 @@
-const urlListar='https://localhost:7042/Listar';
+const urlListar='https://localhost:7042/Facade';
 const liListarTareas= document.getElementById('listar-tareas');
 
 const tablaTareas=document.getElementById('table-listar-tareas');
@@ -41,12 +41,11 @@ liListarTareas.addEventListener('click',(e)=>{
 //Listar Proyectos
 const liListarProyectos=document.getElementById('listar-proyectos');
 const tablaProyectos=document.getElementById('table-listar-proyectos');
-const urlListaProyectos='https://localhost:7042/Listar';
 
 liListarProyectos.addEventListener('click',(e)=>{
     DisplayStatus(tablaProyectos);
 
-    fetch(`${urlListaProyectos}/getListaProyectos`)
+    fetch(`${urlListar}/getListaProyectos`)
     .then((response)=>response.json())
     .then(datos=>{
         MostrarTablaProyectos(datos);

@@ -1,8 +1,8 @@
-const btnLogin=document.getElementById('btn');
+const btnLogin=document.getElementById('btn-login');
 
 btnLogin.addEventListener('click',(e)=>{
     e.preventDefault();
-    const urlLogin='https://localhost:7042/Login/login'
+    const urlLogin='https://localhost:7042/Facade/login'
     
     const email=document.getElementById('email').value;
     const password=document.getElementById('password').value;

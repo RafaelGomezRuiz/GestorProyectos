@@ -1,31 +1,31 @@
-using Microsoft.AspNetCore.Mvc;
+// using Microsoft.AspNetCore.Mvc;
 
-[ApiController]
+// [ApiController]
 
-[Route("[controller]")]
+// [Route("[controller]")]
 
-public class RegistroController : ControllerBase
-{
-    [HttpPost]
-    [Route("registro")]
+// public class RegistroController : ControllerBase
+// {
+//     [HttpPost]
+//     [Route("registro")]
 
-    public IActionResult RegistroUsuario([FromBody] Usuario user)
-    {
-        Usuario? usuario = new Usuario
-        {
-            Name = user.Name,
-            Email = user.Email,
-            Password= user.Password
-        };
+//     public IActionResult RegistroUsuario([FromBody] Usuario user)
+//     {
+//         Usuario? usuario = new Usuario
+//         {
+//             Name = user.Name,
+//             Email = user.Email,
+//             Password= user.Password
+//         };
 
-        if (user != null)
-        {
-            GuardarJson.GuardarUsuario(usuario);
-            return Ok();
-        }
-        else
-        {
-            return BadRequest();
-        }
-    }
-}
+//         if (user != null)
+//         {
+//             GuardarJson.GuardarUsuario(usuario);
+//             return Ok();
+//         }
+//         else
+//         {
+//             return BadRequest();
+//         }
+//     }
+// }

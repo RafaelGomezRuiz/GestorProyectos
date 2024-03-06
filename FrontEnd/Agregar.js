@@ -15,7 +15,7 @@ btnColaborador.addEventListener('click',(e)=>{
     DisplayStatus(formAgregarColaborador);
     const idTarea=document.getElementById('id-tarea').value;
     const emailColaborador=document.getElementById('email-colaborador').value;
-    const urlAgregarColaborador='https://localhost:7042/AgregarColaboradores/agregarColaborador';
+    const urlAgregarColaborador='https://localhost:7042/Facade/agregarColaborador';
     
     const datos={
         Id : idTarea,

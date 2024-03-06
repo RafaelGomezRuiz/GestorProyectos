@@ -33,7 +33,7 @@ btnCrearTarea.addEventListener('click',(e)=>{
         const idProyecto=document.getElementById('id-proyecto').value;
         const descripcion=document.getElementById('descripcion').value;
         const fechaVencimiento=document.getElementById('fecha-vencimiento').value;
-        const urlCrearTarjeta='https://localhost:7042/CrearTarea/crearTarea';
+        const urlCrearTarjeta='https://localhost:7042/Facade/crearTarea';
         
     const datos={
         IdProyecto: idProyecto,
