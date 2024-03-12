@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.AddSqlServer<UsuarioContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
+
+builder.Services.AddScoped<IUsuarioService,UsuarioService>();
+
 builder.Services.AddCors(options=>
 {
     options.AddPolicy("PoliticaRandom",app=> 
@@ -16,9 +21,6 @@ builder.Services.AddCors(options=>
         .AllowAnyMethod();
     });
 });
-
-builder.Services.AddSqlServer<UsuarioContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
