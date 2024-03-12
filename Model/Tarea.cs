@@ -6,6 +6,8 @@ public class Tarea
     public bool Estado { get; set; }
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
+    
+    public virtual Proyecto proyecto {get;set;}
     public List<Usuario>? ColaboradorAsignado{get;set;}
 
     public Tarea()

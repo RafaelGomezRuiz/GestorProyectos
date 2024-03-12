@@ -17,6 +17,8 @@ builder.Services.AddCors(options=>
     });
 });
 
+builder.Services.AddSqlServer<UsuarioContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
