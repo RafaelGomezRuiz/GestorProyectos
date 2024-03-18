@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ProjectManager.Migrations
 {
-    [DbContext(typeof(UsuarioContext))]
-    [Migration("20240312024950_initialCreate")]
-    partial class initialCreate
+    [DbContext(typeof(TareaContext))]
+    [Migration("20240312220656_CreamosTablaTareas")]
+    partial class CreamosTablaTareas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,6 +74,9 @@ namespace ProjectManager.Migrations
                     b.Property<int>("IdProyecto")
                         .HasColumnType("int");
 
+                    b.Property<string>("TipoDb")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("proyectoId")
                         .HasColumnType("int");
 
@@ -81,7 +84,7 @@ namespace ProjectManager.Migrations
 
                     b.HasIndex("proyectoId");
 
-                    b.ToTable("Tarea");
+                    b.ToTable("Tareas");
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -93,28 +96,22 @@ namespace ProjectManager.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TareaId")
+                    b.Property<int?>("TareaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TareaId");
 
-                    b.ToTable("Usuario", (string)null);
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("Tarea", b =>
@@ -130,13 +127,9 @@ namespace ProjectManager.Migrations
 
             modelBuilder.Entity("Usuario", b =>
                 {
-                    b.HasOne("Tarea", "Tarea")
+                    b.HasOne("Tarea", null)
                         .WithMany("ColaboradorAsignado")
-                        .HasForeignKey("TareaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tarea");
+                        .HasForeignKey("TareaId");
                 });
 
             modelBuilder.Entity("Proyecto", b =>

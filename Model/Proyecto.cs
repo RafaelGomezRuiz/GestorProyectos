@@ -7,7 +7,7 @@ public class Proyecto
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
 
-    public virtual ICollection<Tarea> tareas {get;set;}//un proyecto tiene varias tareas
+    public virtual ICollection<Tarea> Tareas {get;set;}//un proyecto tiene varias tareas
 
     public Proyecto()
     {

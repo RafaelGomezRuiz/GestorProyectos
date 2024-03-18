@@ -7,14 +7,8 @@ public class Tarea
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
     
-    public virtual Proyecto proyecto {get;set;}
+    public virtual Proyecto Proyecto {get;set;}
     public List<Usuario>? ColaboradorAsignado{get;set;}
+    public string? TipoDb { get; set; }
 
-    public Tarea()
-    {
-        Id=BuscarJson.UltimoNum("Tarea");
-        Estado=false;
-        FechaCreacion= DateTime.Now;
-        ColaboradorAsignado = new List<Usuario>();
-    }
 }

@@ -8,9 +8,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddSqlServer<UsuarioContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
-
-builder.Services.AddScoped<IUsuarioService,UsuarioService>();
+builder.Services.AddSqlServer<TareaContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
+builder.Services.AddScoped<ITareaService,TareaService>();
+//builder.Services.AddScoped<IUsuarioService,UsuarioService>();
 
 builder.Services.AddCors(options=>
 {

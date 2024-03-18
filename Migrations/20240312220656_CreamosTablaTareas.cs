@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProjectManager.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class CreamosTablaTareas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,7 @@ namespace ProjectManager.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tarea",
+                name: "Tareas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -37,13 +37,14 @@ namespace ProjectManager.Migrations
                     Estado = table.Column<bool>(type: "bit", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FechaVencimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    proyectoId = table.Column<int>(type: "int", nullable: false)
+                    proyectoId = table.Column<int>(type: "int", nullable: false),
+                    TipoDb = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tarea", x => x.Id);
+                    table.PrimaryKey("PK_Tareas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tarea_Proyecto_proyectoId",
+                        name: "FK_Tareas_Proyecto_proyectoId",
                         column: x => x.proyectoId,
                         principalTable: "Proyecto",
                         principalColumn: "Id",
@@ -56,25 +57,24 @@ namespace ProjectManager.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    TareaId = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TareaId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuario", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Usuario_Tarea_TareaId",
+                        name: "FK_Usuario_Tareas_TareaId",
                         column: x => x.TareaId,
-                        principalTable: "Tarea",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "Tareas",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tarea_proyectoId",
-                table: "Tarea",
+                name: "IX_Tareas_proyectoId",
+                table: "Tareas",
                 column: "proyectoId");
 
             migrationBuilder.CreateIndex(
@@ -89,7 +89,7 @@ namespace ProjectManager.Migrations
                 name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "Tarea");
+                name: "Tareas");
 
             migrationBuilder.DropTable(
                 name: "Proyecto");

@@ -1,23 +1,23 @@
-using Microsoft.AspNetCore.Mvc;
+// using Microsoft.AspNetCore.Mvc;
 
-[ApiController]
+// [ApiController]
 
-[Route("[controller]")]
+// [Route("[controller]")]
 
-public class RegistroController : ControllerBase
-{
-    protected readonly  IUsuarioService _usuarioService;
+// public class RegistroController : ControllerBase
+// {
+//     protected readonly  IUsuarioService _usuarioService;
 
-    public RegistroController (IUsuarioService usuarioService)
-    {
-         _usuarioService=usuarioService;
-    }
+//     public RegistroController (IUsuarioService usuarioService)
+//     {
+//          _usuarioService=usuarioService;
+//     }
 
-    [HttpPost]
-    [Route("registro")]
+//     [HttpPost]
+//     [Route("registro")]
 
-    public IActionResult RegistroUsuario([FromBody] Usuario user)
-    {
-        return Ok(_usuarioService.PostUser(user));
-    }
-}
+//     public IActionResult RegistroUsuario([FromBody] Usuario user)
+//     {
+//         return Ok(_usuarioService.PostUser(user));
+//     }
+// }
