@@ -25,4 +25,8 @@ public class TareaContext : DbContext , ITareaService
     {
         Tareas.Add(tarea);
     }
+    public List<Tarea> ListaTareas()
+    {
+        return Tareas;
+    }
 }

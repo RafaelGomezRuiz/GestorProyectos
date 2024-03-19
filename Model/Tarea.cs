@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class Tarea
 {
     public int Id {get; set;}
@@ -6,7 +9,7 @@ public class Tarea
     public bool Estado { get; set; }
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
-    
+    // [JsonIgnore]
     public virtual Proyecto Proyecto {get;set;}
     public List<Usuario>? ColaboradorAsignado{get;set;}
     public string? TipoDb { get; set; }

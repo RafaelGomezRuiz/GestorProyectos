@@ -16,4 +16,9 @@ public class Contexto : ITareaService
         _tareaContext.InsertarTareaDba(tarea);
         _tareaContext.SaveChanges();
     }
+
+    public List<Tarea> ListaTareas()
+    {
+        return _tareaContext.ListaTareas();
+    }
 }

@@ -26,7 +26,7 @@ public class FacadeController : ControllerBase
 
     public List<Tarea>? listaTareas()
     {
-        return ProductosActuales.tareasActuales;
+        return _tareaContext.ListaTareas();
     }
 
     [HttpGet]
