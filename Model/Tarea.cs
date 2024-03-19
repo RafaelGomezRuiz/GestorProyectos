@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,8 +10,9 @@ public class Tarea
     public bool Estado { get; set; }
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
-    // [JsonIgnore]
     public virtual Proyecto Proyecto {get;set;}
+        [JsonIgnore]
+
     public List<Usuario>? ColaboradorAsignado{get;set;}
     public string? TipoDb { get; set; }
 

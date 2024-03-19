@@ -31,7 +31,6 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mi API");
         c.RoutePrefix = string.Empty; // Para que Swagger esté disponible en la raíz
         // despues de la segunda linea me abre con swagger automatico
-        
     });
 }
 
@@ -39,6 +38,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 app.UseCors("PoliticaRandom");
+// app.UseCors(c=> c.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
 
 

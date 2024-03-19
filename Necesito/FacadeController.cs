@@ -18,7 +18,7 @@ public class FacadeController : ControllerBase
 
     // public IActionResult Login([FromBody] ParametrosLogin login)
     // {
-    //     return Ok(_usuarioService.Login(login));
+    //     return Ok(_tareaContext.Login(login));
     // }
 
     [HttpGet]
@@ -41,8 +41,17 @@ public class FacadeController : ControllerBase
     [HttpPost]
     [Route("crearTarea")]
 
-    public IActionResult CrearTarea([FromBody] Tarea tarea)
+    public IActionResult CrearTarea([FromBody] ParametrosCrearTarea parametroTarea)
     {
+            Tarea tarea = new Tarea
+        {
+            IdProyecto = parametroTarea.IdProyecto,
+            Descripcion = parametroTarea.Descripcion,
+            FechaCreacion = DateTime.Now,
+            FechaVencimiento = parametroTarea.FechaVencimiento,
+            Estado = false,
+            TipoDb = parametroTarea.TipoDb
+        };
         _tareaContext.InsertarTareaDba(tarea);
         return Ok();
     }

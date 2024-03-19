@@ -1,8 +1,8 @@
 // public class UsuarioService : IUsuarioService
 // {
-//     UsuarioContext dbContext;
+//     TareaContext dbContext;
 
-//     public UsuarioService(UsuarioContext context)
+//     public UsuarioService(TareaContext context)
 //     {
 //         dbContext = context;
 //     }
@@ -13,12 +13,12 @@
 //         await dbContext.SaveChangesAsync();
 //     }
 
-//     // public async Task Login(ParametrosLogin login)
-//     // {
-//     //     Usuario usuarioLogin=dbContext.Usuarios.FirstOrDefault(c=>c.Email==login.Email);
-//     //     if (usuarioLogin!=null)
-//     //     {
-//     //         usuarioLogin.Password==login.Password;
-//     //     }
-//     // }
+//     public async Task Login(ParametrosLogin login)
+//     {
+//         Usuario? usuarioLogin=dbContext.Usuarios.FirstOrDefault(c=>c.Email==login.Email);
+//         if (usuarioLogin!=null)
+//         {
+//             usuarioLogin.Password==login.Password;
+//         }
+//     }
 // }

@@ -11,10 +11,7 @@ public class Contexto : ITareaService
 
     public void InsertarTareaDba(Tarea tarea)
     {
-        tarea.FechaCreacion = DateTime.Now;
-        tarea.Estado = false;
         _tareaContext.InsertarTareaDba(tarea);
-        _tareaContext.SaveChanges();
     }
 
     public List<Tarea> ListaTareas()

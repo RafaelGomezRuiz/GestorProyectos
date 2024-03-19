@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 public class TareaContext : DbContext , ITareaService
 {
     public DbSet<Tarea> Tareas { get; set; }
+    public DbSet<Usuario> Usuarios {get; set;}
 
     public TareaContext(DbContextOptions options) : base(options){   }
 
@@ -16,17 +17,28 @@ public class TareaContext : DbContext , ITareaService
             tarea.Property(p=>p.Estado).IsRequired().HasMaxLength(5);
             tarea.Property(p=>p.FechaCreacion).IsRequired();
             tarea.Property(p=>p.FechaVencimiento).IsRequired();
+            
             tarea.Property(p=>p.TipoDb).IsRequired().HasMaxLength(30);
 
+        });
+        
+        modelBuilder.Entity<Usuario>(usuario=>{
+            usuario.ToTable("Usuario");
+            usuario.HasKey(p=>p.Id);
+            usuario.Property(p=>p.Name).IsRequired().HasMaxLength(30);
+            usuario.Property(p=>p.Email).IsRequired().HasMaxLength(60);
+            usuario.Property(p=>p.Password).IsRequired().HasMaxLength(50);
         });
     }
     
     public void InsertarTareaDba(Tarea tarea)
     {
         Tareas.Add(tarea);
+        SaveChanges();
+
     }
     public List<Tarea> ListaTareas()
     {
-        return Tareas;
+        return Tareas.ToList();
     }
 }
