@@ -11,7 +11,28 @@ public class FacadeController : ControllerBase
         this._tareaContext=_tareaContext;
     }
 
+    [HttpPost]
+    [Route("login")]
 
+    public IActionResult Login([FromBody] ParametrosLogin? login)
+    {
+        Usuario? usuario=BuscarJson.BuscarUsuario(login.Email);
+        if (usuario == null)
+        {
+            return BadRequest("No existe usuario con ese email");
+        }
+        else
+        {
+            if(usuario.Password==login.Password)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("Contrasena incorrecta");
+            }
+        }
+    }
 
     // [HttpPost]
     // [Route("login")]
