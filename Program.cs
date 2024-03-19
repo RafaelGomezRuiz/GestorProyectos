@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddSqlServer<TareaContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
-builder.Services.AddScoped<ITareaService,TareaService>();
+builder.Services.AddScoped<ITareaService,Contexto>();
 //builder.Services.AddScoped<IUsuarioService,UsuarioService>();
 
 builder.Services.AddCors(options=>

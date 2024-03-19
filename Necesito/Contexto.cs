@@ -1,17 +1,19 @@
 public class Contexto : ITareaService
  
 {
-    ITareaService TareaService;
+    private readonly TareaContext _tareaContext;
 
-    public Contexto(ITareaService TareaService)
+    public Contexto(TareaContext tareaContext)
     {
-        this.TareaService=TareaService;
+        _tareaContext = tareaContext;
     }
+
 
     public void InsertarTareaDba(Tarea tarea)
     {
-        tarea.FechaCreacion=DateTime.Now;
-        tarea.Estado=false;
-        TareaService.InsertarTareaDba(tarea);
+        tarea.FechaCreacion = DateTime.Now;
+        tarea.Estado = false;
+        _tareaContext.InsertarTareaDba(tarea);
+        _tareaContext.SaveChanges();
     }
 }

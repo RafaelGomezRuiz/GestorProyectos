@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-public class TareaContext : DbContext
+public class TareaContext : DbContext , ITareaService
 {
     public DbSet<Tarea> Tareas { get; set; }
 
@@ -21,8 +21,8 @@ public class TareaContext : DbContext
         });
     }
     
-    // public void Insertar(Tarea tarea)
-    // {
-    //     Tareas.Add(tarea);
-    // }
+    public void InsertarTareaDba(Tarea tarea)
+    {
+        Tareas.Add(tarea);
+    }
 }

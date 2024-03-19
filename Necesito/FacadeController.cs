@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 [Route("[controller]")]
 public class FacadeController : ControllerBase
 {
-    protected readonly ITareaService _ITareaService;
+    protected readonly ITareaService _tareaContext;
 
-    public FacadeController (ITareaService _ITareaService)
+    public FacadeController (ITareaService _tareaContext)
     {
-        this._ITareaService=_ITareaService;
+        this._tareaContext=_tareaContext;
     }
 
 
@@ -24,26 +24,27 @@ public class FacadeController : ControllerBase
     [HttpGet]
     [Route("getListaTareas")]
 
-    // public List<Tarea>? listaTareas()
-    // {
-    //     return ProductosActuales.tareasActuales;
-    // }
+    public List<Tarea>? listaTareas()
+    {
+        return ProductosActuales.tareasActuales;
+    }
 
     [HttpGet]
     [Route("getListaProyectos")]
 
-    // public List<Proyecto>? listaProyectos()
-    // {
-    //     List<Proyecto>? listaProyectos= ProductosActuales.proyectosActuales;
-    //     return listaProyectos;
-    // }
+    public List<Proyecto>? listaProyectos()
+    {
+        List<Proyecto>? listaProyectos= ProductosActuales.proyectosActuales;
+        return listaProyectos;
+    }
 
     [HttpPost]
     [Route("crearTarea")]
 
     public IActionResult CrearTarea([FromBody] Tarea tarea)
     {
-        return Ok(_ITareaService.InsertarTareaDba(tarea));
+        _tareaContext.InsertarTareaDba(tarea);
+        return Ok();
     }
 
     [HttpPost]
