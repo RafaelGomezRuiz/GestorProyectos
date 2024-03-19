@@ -22,16 +22,16 @@ liListarTareas.addEventListener('click',(e)=>{
         
         let body='';
         for (let i = 0; i < data.length; i++) {
-            let colaboradorAsignado='';
-            for (let j = 0; j < data[i].colaboradorAsignado.length; j++) {
-                colaboradorAsignado += data[i].colaboradorAsignado[j].email+', ';
-            }
-            if (data[i].colaboradorAsignado.length<1)
-            {
-                colaboradorAsignado= '0';
-            }
+            // let colaboradorAsignado='';
+            // for (let j = 0; j < data[i].colaboradorAsignado.length; j++) {
+            //     colaboradorAsignado += data[i].colaboradorAsignado[j].email+', ';
+            // }
+            // if (data[i].colaboradorAsignado.length<1)
+            // {
+            //     colaboradorAsignado= '0';
+            // }
             body+=`<tr><td>${data[i].id}</td><td>${data[i].idProyecto}</td><td>${data[i].descripcion}</td><td>${data[i].estado}</td>
-            <td>${data[i].fechaCreacion}</td><td>${data[i].fechaVencimiento}</td><td>${colaboradorAsignado}</td></tr>`
+            <td>${data[i].fechaCreacion}</td><td>${data[i].fechaVencimiento}</td><td>${data[i].colaboradorAsignado}</td></tr>`
         }
         
         document.getElementById('body-listar-tareas').innerHTML=body;
