@@ -16,8 +16,11 @@ builder.Services.AddCors(options=>
         .AllowAnyMethod();
     });
 });
-
+/////
 builder.Services.AddSqlServer<TareaContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
+services.AddDbContext<SqliteContext>(builder.Configuration.GetConnectionString("Sqlite"));
+
+////
 builder.Services.AddScoped<ITareaService,Contexto>();
 //builder.Services.AddScoped<IUsuarioService,UsuarioService>();
 
