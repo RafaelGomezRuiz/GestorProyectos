@@ -57,17 +57,17 @@ liListarProyectos.addEventListener('click',(e)=>{
     {
         let colaboradores='';
         for (let i = 0; i < datos.length; i++) {
-            for (let j = 0; j < datos[i].colaboradorAsignado.length; j++) {
+            // for (let j = 0; j < datos[i].colaboradorAsignado.length; j++) {
                 
-                colaboradores+=datos[i].colaboradorAsignado[j].email+", ";
-            }
-            if (datos[i].colaboradorAsignado.length<1)
-            {
-                colaboradores= '0';
-            }
+            //     colaboradores+=datos[i].colaboradorAsignado[j].email+", ";
+            // }
+            // if (datos[i].colaboradorAsignado.length<1)
+            // {
+            //     colaboradores= '0';
+            // }
             template+=`<tr><td>${datos[i].id}</><td>${datos[i].nombre}</td><td>${datos[i].descripcion}</td>
             <td>${datos[i].estado}</td><td>${datos[i].fechaCreacion}</td><td>${datos[i].fechaVencimiento}</td>
-            <td>${colaboradores}</td></tr>` ;  
+            </tr>` ;  
         }
         document.getElementById('body-listar-proyectos').innerHTML=template;
     }

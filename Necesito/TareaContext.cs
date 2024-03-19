@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 public class TareaContext : DbContext , ITareaService
 {
     public DbSet<Tarea> Tareas { get; set; }
+    public DbSet<Proyecto> Proyecto { get; set; }
     public DbSet<Usuario> Usuarios {get; set;}
 
     public TareaContext(DbContextOptions options) : base(options){   }
@@ -40,5 +41,9 @@ public class TareaContext : DbContext , ITareaService
     public List<Tarea> ListaTareas()
     {
         return Tareas.ToList();
+    }
+    public List<Proyecto> ListaProyectos()
+    {
+        return Proyecto.ToList();
     }
 }

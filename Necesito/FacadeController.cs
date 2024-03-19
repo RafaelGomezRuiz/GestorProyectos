@@ -55,8 +55,7 @@ public class FacadeController : ControllerBase
 
     public List<Proyecto>? listaProyectos()
     {
-        List<Proyecto>? listaProyectos= ProductosActuales.proyectosActuales;
-        return listaProyectos;
+        return _tareaContext.ListaProyectos();
     }
 
     [HttpPost]

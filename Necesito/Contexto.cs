@@ -18,4 +18,8 @@ public class Contexto : ITareaService
     {
         return _tareaContext.ListaTareas();
     }
+    public List<Proyecto> ListaProyectos()
+    {
+        return _tareaContext.ListaProyectos();
+    }
 }
