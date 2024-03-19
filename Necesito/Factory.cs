@@ -2,16 +2,16 @@
 
 public class Factory
 {
-    public static ITareaService CrearConeccion(string TipoDb)
+    public static ITareaService CrearConeccion(string tipoDb)
     {
        switch (tipoDb)
         {
             case "SqlServer":
-                return tareaSqlServer;
+                return null;
             // case "PostgreSql":
             //     return tareaPostgreSql;
-            case "MySql":
-                return tareaMySql;
+            case "Sqlite":
+                return null;
             default:
                 throw new ArgumentException("Tipo de base de datos no válido");
         }

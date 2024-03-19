@@ -75,7 +75,9 @@ public class FacadeController : ControllerBase
             Estado = false,
             TipoDb = parametroTarea.TipoDb
         };
-        _tareaContext.InsertarTareaDba(tarea);
+
+        ITareaService contexto = new Contexto(Factory.CrearConeccion(parametroTarea.TipoDb));
+        contexto.InsertarTareaDba(tarea);
         return Ok();
     }
 

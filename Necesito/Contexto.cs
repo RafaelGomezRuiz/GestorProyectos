@@ -1,9 +1,9 @@
 public class Contexto : ITareaService
  
 {
-    private readonly TareaContext _tareaContext;
+    private readonly ITareaService _tareaContext;
 
-    public Contexto(TareaContext tareaContext)
+    public Contexto(ITareaService tareaContext)
     {
         _tareaContext = tareaContext;
     }
