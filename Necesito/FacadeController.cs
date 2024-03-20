@@ -5,9 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 public class FacadeController : ControllerBase
 {
     protected readonly ITareaService _tareaContext;
-
-    public FacadeController (ITareaService _tareaContext)
+    public SqliteContext dbSqlite;
+    public TareaContext dbSqlServer;
+    public FacadeController (ITareaService _tareaContext,SqliteContext dbSqlite,TareaContext dbSqlServer)
     {
+        this.dbSqlite=dbSqlite;
+        this.dbSqlServer=dbSqlServer;
         this._tareaContext=_tareaContext;
     }
     
@@ -37,29 +40,9 @@ public class FacadeController : ControllerBase
         }
     }
 
-    // [HttpPost]
-    // [Route("login")]
+    
 
-    // public IActionResult Login([FromBody] ParametrosLogin login)
-    // {
-    //     return Ok(_tareaContext.Login(login));
-    // }
-
-    [HttpGet]
-    [Route("getListaTareas")]
-
-    public List<Tarea>? listaTareas()
-    {
-        return _tareaContext.ListaTareas();
-    }
-
-    [HttpGet]
-    [Route("getListaProyectos")]
-
-    public List<Proyecto>? listaProyectos()
-    {
-        return _tareaContext.ListaProyectos();
-    }
+    
 
     [HttpPost]
     [Route("crearTarea")]
@@ -76,7 +59,7 @@ public class FacadeController : ControllerBase
             TipoDb = parametroTarea.TipoDb
         };
 
-        ITareaService contexto = new Contexto(Factory.CrearConeccion(parametroTarea.TipoDb));
+        ITareaService contexto = new Contexto(Factory.CrearConeccion(parametroTarea.TipoDb,dbSqlServer,dbSqlite));
         contexto.InsertarTareaDba(tarea);
         return Ok();
     }

@@ -38,12 +38,4 @@ public class TareaContext : DbContext , ITareaService
         SaveChanges();
 
     }
-    public List<Tarea> ListaTareas()
-    {
-        return Tareas.ToList();
-    }
-    public List<Proyecto> ListaProyectos()
-    {
-        return Proyecto.ToList();
-    }
 }

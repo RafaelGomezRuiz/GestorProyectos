@@ -20,7 +20,8 @@ builder.Services.AddCors(options=>
 builder.Services.AddSqlServer<TareaContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
 builder.Services.AddSqlite<SqliteContext>(builder.Configuration.GetConnectionString("Sqlite"));
 ////
-builder.Services.AddScoped<ITareaService,Contexto>();
+builder.Services.AddScoped<ITareaService,SqliteContext>();
+
 //builder.Services.AddScoped<IUsuarioService,UsuarioService>();
 
 var app = builder.Build();

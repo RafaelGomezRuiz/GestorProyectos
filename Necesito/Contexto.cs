@@ -14,12 +14,5 @@ public class Contexto : ITareaService
         _tareaContext.InsertarTareaDba(tarea);
     }
 
-    public List<Tarea> ListaTareas()
-    {
-        return _tareaContext.ListaTareas();
-    }
-    public List<Proyecto> ListaProyectos()
-    {
-        return _tareaContext.ListaProyectos();
-    }
+   
 }
