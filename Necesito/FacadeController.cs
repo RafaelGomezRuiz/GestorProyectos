@@ -61,6 +61,8 @@ public class FacadeController : ControllerBase
 
         ITareaService contexto = new Contexto(Factory.CrearConeccion(parametroTarea.TipoDb,dbSqlServer,dbSqlite));
         contexto.InsertarTareaDba(tarea);
+        dbSqlite.SaveChanges();
+        dbSqlServer.SaveChanges();
         return Ok();
     }
 

@@ -2,14 +2,14 @@ using Microsoft.EntityFrameworkCore;
 
 public class SqliteContext : DbContext , ITareaService
 {
-    public DbSet<Tarea> Tareas { get; set; }
+    public DbSet<Tarea> Tarea { get; set; }
 
     public SqliteContext(DbContextOptions<SqliteContext> options) : base(options){   }
 
     public void InsertarTareaDba(Tarea tarea)
     {
         Tareas.Add(tarea);
-        SaveChanges();
+        //SaveChanges();
     }
 
 }
