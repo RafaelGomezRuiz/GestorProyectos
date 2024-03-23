@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "miIRKEYklkXZ8SzY3NTL5N6M6wfxgZbLmY1pPi0CleMBHse9FZRsXcbFXDK9X5x8SreBWZLL1m+bvZLb5ydayA==",
+  "dgSpecHash": "T1A4uZLCK6sGJjc9a0BfZOhIJH0G7VTbP+IYM/41yg6m0zWsqERjQ67dY/O3iAqlNwHHsDoqEKMLgf3zT84xHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj",
+  "projectFilePath": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gsant\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gsant\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
