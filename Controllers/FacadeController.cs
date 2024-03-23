@@ -4,19 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 [Route("[controller]")]
 public class FacadeController : ControllerBase
 {
-    protected readonly ITareaService _tareaContext;
-    public SqliteContext dbSqlite;
-    public TareaContext dbSqlServer;
-    public FacadeController (ITareaService _tareaContext,SqliteContext dbSqlite,TareaContext dbSqlServer)
-    {
-        this.dbSqlite=dbSqlite;
-        this.dbSqlServer=dbSqlServer;
-        this._tareaContext=_tareaContext;
-    }
-    
-
-    
-
     [HttpPost]
     [Route("login")]
 
@@ -40,30 +27,43 @@ public class FacadeController : ControllerBase
         }
     }
 
-    
+    [HttpGet]
+    [Route("getListaTareas")]
 
-    
+    public List<Tarea>? listaTareas()
+    {
+        return ProductosActuales.tareasActuales;
+    }
+
+    [HttpGet]
+    [Route("getListaProyectos")]
+
+    public List<Proyecto>? listaProyectos()
+    {
+        List<Proyecto>? listaProyectos= ProductosActuales.proyectosActuales;
+        return listaProyectos;
+    }
 
     [HttpPost]
     [Route("crearTarea")]
 
-    public IActionResult CrearTarea([FromBody] ParametrosCrearTarea parametroTarea)
+    public IActionResult CrearTarea([FromBody] ParametrosCrearTarea tarea)
     {
-            Tarea tarea = new Tarea
+        Proyecto? proyecto = BuscarJson.BuscarProyecto(tarea.IdProyecto);
+        if (proyecto==null )
         {
-            IdProyecto = parametroTarea.IdProyecto,
-            Descripcion = parametroTarea.Descripcion,
-            FechaCreacion = DateTime.Now,
-            FechaVencimiento = parametroTarea.FechaVencimiento,
-            Estado = false,
-            TipoDb = parametroTarea.TipoDb
-        };
-
-        ITareaService contexto = new Contexto(Factory.CrearConeccion(parametroTarea.TipoDb,dbSqlServer,dbSqlite));
-        contexto.InsertarTareaDba(tarea);
-        dbSqlite.SaveChanges();
-        dbSqlServer.SaveChanges();
-        return Ok();
+            return BadRequest(new { error = "No existe un proyecto con ese id", idProyecto = tarea.IdProyecto });
+        }
+        else
+        {
+            Tarea? tareaCreada =new Tarea{
+                IdProyecto=tarea.IdProyecto,
+                Descripcion=tarea.Descripcion,
+                FechaVencimiento=tarea.FechaVencimiento,
+            };
+            GuardarJson.GuardarTarea(tareaCreada);
+            return Ok();
+        }
     }
 
     [HttpPost]

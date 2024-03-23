@@ -33,14 +33,12 @@ btnCrearTarea.addEventListener('click',(e)=>{
         const idProyecto=document.getElementById('id-proyecto').value;
         const descripcion=document.getElementById('descripcion').value;
         const fechaVencimiento=document.getElementById('fecha-vencimiento').value;
-        const tipoDb=document.getElementById('tipo-db').value;
-        const urlCrearTarea='https://localhost:7042/Facade/crearTarea';
+        const urlCrearTarjeta='https://localhost:7042/Facade/crearTarea';
         
     const datos={
         IdProyecto: idProyecto,
         Descripcion : descripcion,
         FechaVencimiento: fechaVencimiento,
-        TipoDb : tipoDb,
     }
     const options={
         method:"POST",
@@ -49,7 +47,7 @@ btnCrearTarea.addEventListener('click',(e)=>{
         },
         body : JSON.stringify(datos)
     }
-    fetch(urlCrearTarea,options)
+    fetch(urlCrearTarjeta,options)
     .then((response)=>{
         if (!response.ok) {
             throw new Error("Haz ingresado valores invalidos");

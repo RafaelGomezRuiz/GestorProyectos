@@ -16,13 +16,6 @@ builder.Services.AddCors(options=>
         .AllowAnyMethod();
     });
 });
-/////
-builder.Services.AddSqlServer<TareaContext>(builder.Configuration.GetConnectionString("CnDbPManager"));
-builder.Services.AddSqlite<SqliteContext>(builder.Configuration.GetConnectionString("Sqlite"));
-////
-builder.Services.AddScoped<ITareaService,SqliteContext>();
-
-//builder.Services.AddScoped<IUsuarioService,UsuarioService>();
 
 var app = builder.Build();
 
@@ -34,6 +27,7 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mi API");
         c.RoutePrefix = string.Empty; // Para que Swagger esté disponible en la raíz
         // despues de la segunda linea me abre con swagger automatico
+        
     });
 }
 
@@ -41,7 +35,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 app.UseCors("PoliticaRandom");
-// app.UseCors(c=> c.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
 
 

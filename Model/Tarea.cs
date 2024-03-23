@@ -1,7 +1,3 @@
-using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 public class Tarea
 {
     public int Id {get; set;}
@@ -10,10 +6,13 @@ public class Tarea
     public bool Estado { get; set; }
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
-    public virtual Proyecto Proyecto {get;set;}
-        [JsonIgnore]
-
     public List<Usuario>? ColaboradorAsignado{get;set;}
-    public string? TipoDb { get; set; }
 
+    public Tarea()
+    {
+        Id=BuscarJson.UltimoNum("Tarea");
+        Estado=false;
+        FechaCreacion= DateTime.Now;
+        ColaboradorAsignado = new List<Usuario>();
+    }
 }

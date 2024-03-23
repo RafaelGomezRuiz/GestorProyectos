@@ -6,18 +6,26 @@
 
 // public class RegistroController : ControllerBase
 // {
-//     protected readonly  IUsuarioService _usuarioService;
-
-//     public RegistroController (IUsuarioService usuarioService)
-//     {
-//          _usuarioService=usuarioService;
-//     }
-
 //     [HttpPost]
 //     [Route("registro")]
 
 //     public IActionResult RegistroUsuario([FromBody] Usuario user)
 //     {
-//         return Ok(_usuarioService.PostUser(user));
+//         Usuario? usuario = new Usuario
+//         {
+//             Name = user.Name,
+//             Email = user.Email,
+//             Password= user.Password
+//         };
+
+//         if (user != null)
+//         {
+//             GuardarJson.GuardarUsuario(usuario);
+//             return Ok();
+//         }
+//         else
+//         {
+//             return BadRequest();
+//         }
 //     }
 // }
