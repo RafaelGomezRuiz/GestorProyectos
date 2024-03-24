@@ -40,7 +40,7 @@ public class FacadeController : ControllerBase
 
     public List<Tarea>? listaTareas()
     {
-        return ProductosActuales.tareasActuales;
+        return SqlServerServices.GetTareas();
     }
 
     [HttpGet]
@@ -56,19 +56,17 @@ public class FacadeController : ControllerBase
 
     public IActionResult CrearTarea([FromBody] ParametrosCrearTarea parametroTarea)
     {
-        // Proyecto proyecto=sqliteService.SqliteContext.Proyectos.FirstOrDefault(p=>p.Id==parametroTarea.IdProyecto);
-
-        // if(proyecto==null){
-        //     return BadRequest(new { error = "No existe un proyecto con ese id", parametroTarea.IdProyecto });
-        // }
-         Tarea tarea = new Tarea
+        if (SqlServerServices.ProjectExist(parametroTarea.IdProyecto)==false)
         {
-            IdProyecto = parametroTarea.IdProyecto,
-            Descripcion = parametroTarea.Descripcion,
-            FechaVencimiento = parametroTarea.FechaVencimiento,
-            TipoDb = parametroTarea.TipoDb
-        };
-        
+            return BadRequest("No existe un projecto con ese Id");
+        }
+         Tarea tarea = new Tarea
+            {
+                IdProyecto = parametroTarea.IdProyecto,
+                Descripcion = parametroTarea.Descripcion,
+                FechaVencimiento = parametroTarea.FechaVencimiento,
+                TipoDb = parametroTarea.TipoDb
+            };
         SqlServerServices.CrearTarea(tarea);
         return Ok();
         

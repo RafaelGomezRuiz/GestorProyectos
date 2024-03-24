@@ -17,4 +17,14 @@ public class SqlServerServices : ITarea
     {
         return SqlServerContext.Proyectos.ToList();
     }
+    public List<Tarea> GetTareas()
+    {
+        return SqlServerContext.Tareas.ToList();
+    }
+
+    public bool ProjectExist(int id)
+    {
+        bool proyecto =SqlServerContext.Proyectos.Any(p=>p.Id == id);
+        return proyecto;
+    }
 }
