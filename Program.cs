@@ -11,7 +11,8 @@ builder.Services.AddSqlite<SqliteContext>(builder.Configuration.GetConnectionStr
 builder.Services.AddSqlServer<SqlServerContext>(builder.Configuration.GetConnectionString("SqlServerCn"));
 
 
-builder.Services.AddScoped<ITarea,SqliteService>();
+// builder.Services.AddScoped<ITarea,SqliteService>();
+builder.Services.AddScoped<ITarea,SqlServerServices>();
 
 builder.Services.AddCors(options=>
 {

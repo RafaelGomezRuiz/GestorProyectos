@@ -7,5 +7,4 @@ public class SqlServerContext : DbContext
     public DbSet<Usuario> Usuarios {get; set;}
 
     public  SqlServerContext(DbContextOptions<SqlServerContext> options) : base(options) {}
-
 }

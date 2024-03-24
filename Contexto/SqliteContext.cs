@@ -7,5 +7,4 @@ public class SqliteContext : DbContext
     public DbSet<Usuario> Usuarios {get; set;}
 
     public SqliteContext(DbContextOptions<SqliteContext> options) : base(options) {}
-    
 }

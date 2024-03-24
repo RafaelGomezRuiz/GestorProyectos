@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 public class FacadeController : ControllerBase
 {
 
-    protected readonly ITarea sqliteService;
+    protected readonly ITarea SqlServerServices;
 
-    public FacadeController(ITarea sqliteService)
+    public FacadeController(ITarea SqlServerServices)
     {
-        this.sqliteService=sqliteService;
+        this.SqlServerServices=SqlServerServices;
     }
 
     [HttpPost]
@@ -70,7 +70,7 @@ public class FacadeController : ControllerBase
             TipoDb = parametroTarea.TipoDb
         };
         
-        sqliteService.CrearTarea(tarea);
+        SqlServerServices.CrearTarea(tarea);
         return Ok();
         
     }
