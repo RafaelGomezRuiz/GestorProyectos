@@ -13,5 +13,10 @@ public class SqliteService : ITarea
         SqliteContext.SaveChanges();
     }
 
+    public List<Proyecto> GetProyectos()
+    {
+        return SqliteContext.Proyectos.ToList();
+    }
+
 }
 

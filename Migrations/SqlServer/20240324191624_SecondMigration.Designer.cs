@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ProjectManager.Migrations.SqlServer
 {
     [DbContext(typeof(SqlServerContext))]
-    partial class SqlServerContextModelSnapshot : ModelSnapshot
+    [Migration("20240324191624_SecondMigration")]
+    partial class SecondMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,16 +74,17 @@ namespace ProjectManager.Migrations.SqlServer
                     b.Property<int>("IdProyecto")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProyectoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("TipoDb")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdProyecto");
+                    b.HasIndex("ProyectoId");
 
-                    b.ToTable("Tarea", (string)null);
+                    b.ToTable("Tareas");
                 });
 
             modelBuilder.Entity("Usuario", b =>
@@ -115,7 +118,7 @@ namespace ProjectManager.Migrations.SqlServer
                 {
                     b.HasOne("Proyecto", "Proyecto")
                         .WithMany("Tareas")
-                        .HasForeignKey("IdProyecto")
+                        .HasForeignKey("ProyectoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

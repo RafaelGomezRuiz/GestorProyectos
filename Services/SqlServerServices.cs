@@ -10,5 +10,11 @@ public class SqlServerServices : ITarea
     public void CrearTarea(Tarea tarea)
     {
         SqlServerContext.Tareas.Add(tarea);
+        SqlServerContext.SaveChanges();
+    }
+
+    public List<Proyecto> GetProyectos()
+    {
+        return SqlServerContext.Proyectos.ToList();
     }
 }
