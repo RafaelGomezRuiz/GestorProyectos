@@ -33,12 +33,14 @@ btnCrearTarea.addEventListener('click',(e)=>{
         const idProyecto=document.getElementById('id-proyecto').value;
         const descripcion=document.getElementById('descripcion').value;
         const fechaVencimiento=document.getElementById('fecha-vencimiento').value;
+        const tipoDb=document.getElementById('tipo-db').value;
         const urlCrearTarjeta='https://localhost:7042/Facade/crearTarea';
         
     const datos={
         IdProyecto: idProyecto,
         Descripcion : descripcion,
         FechaVencimiento: fechaVencimiento,
+        TipoDb: tipoDb,
     }
     const options={
         method:"POST",

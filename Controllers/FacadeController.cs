@@ -4,6 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 [Route("[controller]")]
 public class FacadeController : ControllerBase
 {
+
+    protected readonly ITarea sqliteService;
+
+    public FacadeController(ITarea sqliteService)
+    {
+        this.sqliteService=sqliteService;
+    }
+
     [HttpPost]
     [Route("login")]
 
@@ -47,23 +55,24 @@ public class FacadeController : ControllerBase
     [HttpPost]
     [Route("crearTarea")]
 
-    public IActionResult CrearTarea([FromBody] ParametrosCrearTarea tarea)
+    public IActionResult CrearTarea([FromBody] ParametrosCrearTarea parametroTarea)
     {
-        Proyecto? proyecto = BuscarJson.BuscarProyecto(tarea.IdProyecto);
-        if (proyecto==null )
+        // Proyecto proyecto=sqliteService.SqliteContext.Proyectos.FirstOrDefault(p=>p.Id==parametroTarea.IdProyecto);
+
+        // if(proyecto==null){
+        //     return BadRequest(new { error = "No existe un proyecto con ese id", parametroTarea.IdProyecto });
+        // }
+         Tarea tarea = new Tarea
         {
-            return BadRequest(new { error = "No existe un proyecto con ese id", idProyecto = tarea.IdProyecto });
-        }
-        else
-        {
-            Tarea? tareaCreada =new Tarea{
-                IdProyecto=tarea.IdProyecto,
-                Descripcion=tarea.Descripcion,
-                FechaVencimiento=tarea.FechaVencimiento,
-            };
-            GuardarJson.GuardarTarea(tareaCreada);
-            return Ok();
-        }
+            IdProyecto = parametroTarea.IdProyecto,
+            Descripcion = parametroTarea.Descripcion,
+            FechaVencimiento = parametroTarea.FechaVencimiento,
+            TipoDb = parametroTarea.TipoDb
+        };
+        
+        sqliteService.CrearTarea(tarea);
+        return Ok();
+        
     }
 
     [HttpPost]

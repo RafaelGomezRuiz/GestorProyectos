@@ -7,6 +7,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSqlite<SqliteContext>(builder.Configuration.GetConnectionString("SqliteCn"));
+
+builder.Services.AddScoped<ITarea,SqliteService>();
+
 builder.Services.AddCors(options=>
 {
     options.AddPolicy("PoliticaRandom",app=> 

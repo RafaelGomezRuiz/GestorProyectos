@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 public class Proyecto
 {
     public int Id { get; set; }
@@ -6,12 +8,13 @@ public class Proyecto
     public bool Estado { get; set; }
     public DateTime FechaCreacion{get;set;}
     public DateTime FechaVencimiento{get;set;}
-    public List<Usuario>? ColaboradorAsignado{get;set;}
+    
+    [JsonIgnore]
+    public virtual ICollection<Tarea> Tareas {get;set;}//un proyecto tiene varias tareas
 
     public Proyecto()
     {
         Estado=true;
         FechaCreacion= DateTime.Now;
-        ColaboradorAsignado = new List<Usuario>();
     }
 }

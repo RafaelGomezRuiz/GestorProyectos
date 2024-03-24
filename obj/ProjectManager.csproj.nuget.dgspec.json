@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj": {}
+    "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj": {
+    "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj",
+        "projectUniqueName": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj",
         "projectName": "ProjectManager",
-        "projectPath": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj",
+        "projectPath": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj",
         "packagesPath": "C:\\Users\\gsant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\obj\\",
+        "outputPath": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gsant\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.28, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.28, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.28, )"
+            },
             "NewtonSoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
