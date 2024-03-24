@@ -100,10 +100,8 @@ public class FacadeController : ControllerBase
             {
                 tarea.ColaboradorAsignado.Add(colaboradorAsignado);
                 GuardarJson.SerializarListaTareas();
-
                 // colaboradorAsignado.Tarea.Add(tarea);
                 // GuardarJson.SerializarListaUsuarios();
-                
                 return Ok();
             }
         }

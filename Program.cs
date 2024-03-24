@@ -8,6 +8,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlite<SqliteContext>(builder.Configuration.GetConnectionString("SqliteCn"));
+builder.Services.AddSqlServer<SqlServerContext>(builder.Configuration.GetConnectionString("SqlServerCn"));
+
 
 builder.Services.AddScoped<ITarea,SqliteService>();
 
