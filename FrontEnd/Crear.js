@@ -56,7 +56,7 @@ btnCrearTarea.addEventListener('click',(e)=>{
                 throw new Error(errorMessage);
             });
         }
-        alert("Tarea Creada");
+        alert("Tarea Creada con exito");
     })
     .catch((error)=>alert('Error al crear la tarea: ' + error.message));
 })

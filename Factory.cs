@@ -1,13 +1,13 @@
 public class Factory
 {
-    public ITarea  GetContextInstance(string tipoDb, SqliteContext sqliteContext, SqlServerContext sqlServerContext)
+    public static ITarea  GetContextInstance(string tipoDb, SqlServerContext SqlServerContext, SqliteContext SqliteContext)
     {
         switch (tipoDb)
         {
             case "SqlServer":
-                return sqlServerContext;
+                return  SqlServerContext;
             case "Sqlite":
-                return sqliteContext;
+                return SqliteContext;
             default: 
                 return null;
         }

@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 public class FacadeController : ControllerBase
 {
 
-    protected readonly ITarea SqlServerServices;
+    protected readonly SqliteContext sqliteContext;
+    protected readonly SqlServerContext sqlServerContext;
 
-    public FacadeController(ITarea SqlServerServices)
+    public FacadeController(SqliteContext sqliteContext,SqlServerContext sqlServerContext)
     {
-        this.SqlServerServices=SqlServerServices;
+        this.sqliteContext=sqliteContext;
+        this.sqlServerContext=sqlServerContext;
     }
 
     [HttpPost]
@@ -40,26 +42,38 @@ public class FacadeController : ControllerBase
 
     public List<Tarea>? listaTareas()
     {
-        return SqlServerServices.GetTareas();
+        List<Tarea> tareaList = new List<Tarea>();
+        
+        foreach (var item in sqliteContext.GetTareas())
+        {
+            tareaList.Add(item);
+        }
+        foreach (var item in sqlServerContext.GetTareas())
+        {
+            tareaList.Add(item);
+        }
+        return tareaList;
+        
     }
 
-    [HttpGet]
-    [Route("getListaProyectos")]
+    // [HttpGet]
+    // [Route("getListaProyectos")]
 
-    public List<Proyecto>? listaProyectos()
-    {
-        return SqlServerServices.GetProyectos();
-    }
+    // public List<Proyecto>? listaProyectos()
+    // {
+    //     return SqlServerServices.GetProyectos();
+    // }
 
     [HttpPost]
     [Route("crearTarea")]
 
     public IActionResult CrearTarea([FromBody] ParametrosCrearTarea parametroTarea)
     {
-        if (SqlServerServices.ProjectExist(parametroTarea.IdProyecto)==false)
-        {
-            return BadRequest("No existe un projecto con ese Id");
-        }
+        ITarea contexto=new Strategy(Factory.GetContextInstance(parametroTarea.TipoDb,sqlServerContext, sqliteContext));
+        // if (contexto.ProjectExist(parametroTarea.IdProyecto)==false)
+        // {
+        //     return BadRequest("No existe un projecto con ese Id");
+        // }
          Tarea tarea = new Tarea
             {
                 IdProyecto = parametroTarea.IdProyecto,
@@ -67,7 +81,7 @@ public class FacadeController : ControllerBase
                 FechaVencimiento = parametroTarea.FechaVencimiento,
                 TipoDb = parametroTarea.TipoDb
             };
-        SqlServerServices.CrearTarea(tarea);
+        contexto.CrearTarea(tarea);
         return Ok();
         
     }

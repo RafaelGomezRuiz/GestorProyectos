@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-public class SqliteContext : DbContext
+public class SqliteContext : DbContext, ITarea
 {
     public DbSet<Tarea> Tareas {get; set;}
     public DbSet<Proyecto> Proyectos {get; set;}
@@ -20,4 +20,27 @@ public class SqliteContext : DbContext
             usuario.Property(p=>p.TipoDb).IsRequired().HasMaxLength(10);
         });
     }
+
+    
+    public void  CrearTarea(Tarea tarea)
+    {
+        Tareas.Add(tarea);
+        SaveChanges();
+    }
+    public List<Tarea> GetTareas()
+    {
+        return Tareas.ToList();
+    }
+
+    public List<Proyecto> GetProyectos()
+    {
+        return Proyectos.ToList();
+    }
+
+    public bool ProjectExist(int id)
+    {
+        bool proyecto =Proyectos.Any(p=>p.Id == id);
+        return proyecto;
+    }
+
 }
