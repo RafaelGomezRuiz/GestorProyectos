@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QYrzwriu2nFePs78dferZagPWMDLDQUTtNjHuvIA5XRcv9mVtTjiBny6lojS7RlxRKY6SnTl7snykYXxuUPH+A==",
+  "dgSpecHash": "3T3V0kzIgr66Ri5O8k1pXr0BOVy1pFTzjluU0YWUjkPDUZQefPGrClvpaQqcGdbV+fx2V7PM/OO6ay1QtD78rQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj",
+  "projectFilePath": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gsant\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gsant\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -65,10 +65,10 @@
     "C:\\Users\\gsant\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\gsant\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\gsant\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\gsant\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
-    "C:\\Users\\gsant\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512",
     "C:\\Users\\gsant\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
-    "C:\\Users\\gsant\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512"
+    "C:\\Users\\gsant\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\gsant\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\gsant\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

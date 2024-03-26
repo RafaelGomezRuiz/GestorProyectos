@@ -3007,11 +3007,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj",
+      "projectUniqueName": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj",
       "projectName": "ProjectManager",
-      "projectPath": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\ProjectManager.csproj",
+      "projectPath": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\ProjectManager.csproj",
       "packagesPath": "C:\\Users\\gsant\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gsant\\Programacionll\\ProjectConeccionSqlite\\GestorProyectos\\obj\\",
+      "outputPath": "C:\\Users\\gsant\\Programacionll\\ProjectManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gsant\\AppData\\Roaming\\NuGet\\NuGet.Config",
